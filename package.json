@@ -1,0 +1,63 @@
+{
+  "name": "@selectquotelabs/sqhooks",
+  "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/sqhooks.umd.js",
+  "module": "./dist/sqhooks.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/sqhooks.es.js",
+      "require": "./dist/sqhooks.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint.fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "lint.staged": "lint-staged",
+    "format": "npx prettier --write 'src/**/*.{ts,tsx}'"
+  },
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^11.2.5",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "@vitejs/plugin-react-refresh": "^1.3.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.23.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^3.10.2",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2",
+    "vite": "^2.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,md}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "browserslist": "last 2 Chrome versions"
+}
