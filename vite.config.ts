@@ -8,9 +8,15 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/hooks/index.ts'),
       name: 'SQHooks',
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+        },
+      },
     },
   },
 });
