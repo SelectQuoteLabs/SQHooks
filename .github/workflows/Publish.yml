@@ -1,0 +1,27 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Node Setup
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test.ci
+      - run: npm run build
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SQ_GITHUB_ACTIONS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
