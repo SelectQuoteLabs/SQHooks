@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.0.0...v1.1.0) (2021-04-12)
+
+
+### Features
+
+* 🎸 typescript declaration files ([41838b9](https://github.com/SelectQuoteLabs/SQHooks/commit/41838b915ba6ab9205f458cd79c3bbf9416e101f)), closes [#6](https://github.com/SelectQuoteLabs/SQHooks/issues/6)
+
 ## 1.0.0 (2021-04-09)
 
 
