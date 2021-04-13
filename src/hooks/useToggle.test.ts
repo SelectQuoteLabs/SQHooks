@@ -1,12 +1,12 @@
 import {act, renderHook} from '@testing-library/react-hooks';
 import {useToggle} from '.';
 
-const setup = (initialValue: boolean) => {
+const setupRenderHook = (initialValue: boolean) => {
   return renderHook(() => useToggle(initialValue));
 };
 
 it('should initialize state to true', () => {
-  const {result} = setup(true);
+  const {result} = setupRenderHook(true);
   const {value, toggle} = result.current;
 
   expect(value).toBe(true);
@@ -14,7 +14,7 @@ it('should initialize state to true', () => {
 });
 
 it('should initialize state to false', () => {
-  const {result} = setup(false);
+  const {result} = setupRenderHook(false);
   const {value, toggle} = result.current;
 
   expect(value).toBe(false);
@@ -22,7 +22,7 @@ it('should initialize state to false', () => {
 });
 
 it('should toggle state to true from false', () => {
-  const {result} = setup(false);
+  const {result} = setupRenderHook(false);
   const {value: valueBefore, toggle} = result.current;
   expect(valueBefore).toBe(false);
 
@@ -33,7 +33,7 @@ it('should toggle state to true from false', () => {
 });
 
 it('should toggle state to false from true', () => {
-  const {result} = setup(true);
+  const {result} = setupRenderHook(true);
   const {value: valueBefore, toggle} = result.current;
   expect(valueBefore).toBe(true);
 
