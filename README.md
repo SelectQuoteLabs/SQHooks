@@ -128,6 +128,30 @@ const prevCount = usePrevious(count);
 
 **Returns** The previous value of the target state
 
+---
+
+### useToggle
+
+**Description** Simple hook that returns a boolean value and a function that toggles that value to the inverse of its previous state.
+
+**Example**
+
+```javascript
+const {isOn, toggle} = useToggle();
+```
+
+**Parameters**
+`initialValue: boolean` (optional) The initial value of `isOn`. Defaults to `false` if not specified.
+
+**Returns**
+
+```ts
+{
+  isOn: boolean;
+  toggle: () => void
+}
+```
+
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
