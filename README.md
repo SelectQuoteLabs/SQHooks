@@ -105,6 +105,49 @@ const {isDialogOpen, openDialog, closeDialog} = useDialog(false);
 
 **Returns** `{isDialogOpen: boolean, openDialog: void fn, closeDialog: void fn}`
 
+---
+
+### useDebounce / useDebouncedCallback
+
+**Description** `useDebounce` for simple values, `useDebouncedCallback` for callbacks
+
+**[`use-debounce` docs](https://github.com/xnimorz/use-debounce#readme)**
+
+**Example**
+
+```javascript
+// useDebounce
+const [text, setText] = useState('Hello');
+const [value] = useDebounce(text, 1000);
+
+return (
+  <div>
+    <input
+      defaultValue={text}
+      onChange={(event) => setText(event.target.value)}
+    />
+    <p>Actual value: {text}</p>
+    <p>Debounced value: {value}</p>
+  </div>
+);
+
+// useDebouncedCallback
+const [value, setValue] = useState('');
+const debounced = useDebouncedCallback((value) => {
+  setValue(value);
+}, 1000);
+
+return (
+  <div>
+    <input
+      defaultValue={value}
+      onChange={(event) => debounced(event.target.value)}
+    />
+    <p>Debounced value: {value}</p>
+  </div>
+);
+```
+
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
