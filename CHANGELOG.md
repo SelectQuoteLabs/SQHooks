@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.3.0...v1.4.0) (2021-04-13)
+
+
+### Features
+
+* 🎸 add useLocalStorage hook with tests ([cae8e9e](https://github.com/SelectQuoteLabs/SQHooks/commit/cae8e9e50ab1ab3cc489f407874c93f062faec6f))
+
 ## [1.3.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.2.0...v1.3.0) (2021-04-13)
 
 
