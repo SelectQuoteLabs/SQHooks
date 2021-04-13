@@ -1,11 +1,12 @@
 {
   "name": "@selectquotelabs/sqhooks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "files": [
     "dist"
   ],
   "main": "./dist/sqhooks.cjs.js",
   "module": "./dist/sqhooks.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/sqhooks.es.js",
@@ -15,7 +16,7 @@
   "private": false,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build && tsc",
     "commit": "npx git-cz",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "lint.fix": "eslint 'src/**/*.{ts,tsx}' --fix",
