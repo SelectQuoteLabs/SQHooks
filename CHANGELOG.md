@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.1.0...v1.2.0) (2021-04-13)
+
+
+### Features
+
+* 🎸 add `usePrevious` hook with test ([4ac1e7e](https://github.com/SelectQuoteLabs/SQHooks/commit/4ac1e7e369114fbc50efb708d01df84b9b3635c1))
+
 ## [1.1.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.0.0...v1.1.0) (2021-04-12)
 
 
