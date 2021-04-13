@@ -199,7 +199,7 @@ const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
 
 ### useToggle
 
-**Description** Simple hook that returns a boolean value and a function that toggles that value to the inverse of its previous state.
+**Description** Simple hook that returns a boolean value and a function that toggles that value to the inverse of its current state.
 
 **Example**
 
