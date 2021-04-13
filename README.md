@@ -107,6 +107,29 @@ const {isDialogOpen, openDialog, closeDialog} = useDialog(false);
 
 ---
 
+### usePrevious
+
+**Description** Get the previous value of props or state
+
+**Example**
+
+```javascript
+const [count, setCount] = useState(0);
+
+const prevCount = usePrevious(count);
+// If the `count` increments to 1 the `prevCount` will be 0
+```
+
+**Parameters**
+
+`value`: the value whose previous state we want to track
+
+`initialValue`: (optional) the return value of the hook on initial render. If an `initialValue` isn't provided the initial return value will be `undefined`.
+
+**Returns** The previous value of the target state
+
+---
+
 ### useDebounce / useDebouncedCallback
 
 **Description** `useDebounce` for simple values, `useDebouncedCallback` for callbacks
@@ -119,7 +142,6 @@ const {isDialogOpen, openDialog, closeDialog} = useDialog(false);
 // useDebounce
 const [text, setText] = useState('Hello');
 const [value] = useDebounce(text, 1000);
-
 return (
   <div>
     <input
@@ -130,13 +152,11 @@ return (
     <p>Debounced value: {value}</p>
   </div>
 );
-
 // useDebouncedCallback
 const [value, setValue] = useState('');
 const debounced = useDebouncedCallback((value) => {
   setValue(value);
 }, 1000);
-
 return (
   <div>
     <input
