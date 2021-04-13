@@ -1,10 +1,11 @@
 import {renderHook} from '@testing-library/react-hooks';
 import {usePrevious} from '.';
 
-const setup = ({initialValue}: {initialValue?: any} = {}) =>
-  renderHook(({state}) => usePrevious(state, initialValue), {
+const setup = ({initialValue}: {initialValue?: any} = {}) => {
+  return renderHook(({state}) => usePrevious(state, initialValue), {
     initialProps: {state: 0},
   });
+};
 
 test('should return undefined on initial render if no initialValue provided', () => {
   const {result} = setup();
