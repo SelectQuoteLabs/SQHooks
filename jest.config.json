@@ -2,6 +2,5 @@
   "transform": {
     "^.+\\.ts?$": "babel-jest"
   },
-  "resetMocks": false,
   "setupFiles": ["jest-localstorage-mock"]
 }

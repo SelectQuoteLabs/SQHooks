@@ -132,7 +132,7 @@ const prevCount = usePrevious(count);
 
 ### useLocalStorage
 
-**Description** Sync state to local storage (similar to `useState`) so that it persists through a page refresh
+**Description** Sync state to local storage (similar to `useState`) so that it persists through a page refresh. Tests utilize the [`jest-localstorage-mock`](https://www.npmjs.com/package/jest-localstorage-mock).
 
 **Example**
 
