@@ -204,17 +204,17 @@ const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
 **Example**
 
 ```javascript
-const {isOn, toggle} = useToggle();
+const {value, toggle} = useToggle();
 ```
 
 **Parameters**
-`initialValue: boolean` (optional) The initial value of `isOn`. Defaults to `false` if not specified.
+`initialValue: boolean` (optional) The initial value of `value`. Defaults to `false` if not specified.
 
 **Returns**
 
 ```ts
 {
-  isOn: boolean;
+  value: boolean;
   toggle: () => void
 }
 ```

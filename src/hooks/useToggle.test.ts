@@ -7,38 +7,38 @@ const setup = (initialValue: boolean) => {
 
 it('should initialize state to true', () => {
   const {result} = setup(true);
-  const {isOn, toggle} = result.current;
+  const {value, toggle} = result.current;
 
-  expect(isOn).toBe(true);
+  expect(value).toBe(true);
   expect(toggle).toBeInstanceOf(Function);
 });
 
 it('should initialize state to false', () => {
   const {result} = setup(false);
-  const {isOn, toggle} = result.current;
+  const {value, toggle} = result.current;
 
-  expect(isOn).toBe(false);
+  expect(value).toBe(false);
   expect(toggle).toBeInstanceOf(Function);
 });
 
 it('should toggle state to true from false', () => {
   const {result} = setup(false);
-  const {isOn: isOnBefore, toggle} = result.current;
-  expect(isOnBefore).toBe(false);
+  const {value: valueBefore, toggle} = result.current;
+  expect(valueBefore).toBe(false);
 
   act(() => toggle());
 
-  const {isOn: isOnAfter} = result.current;
-  expect(isOnAfter).toBe(true);
+  const {value: valueAfter} = result.current;
+  expect(valueAfter).toBe(true);
 });
 
 it('should toggle state to false from true', () => {
   const {result} = setup(true);
-  const {isOn: isOnBefore, toggle} = result.current;
-  expect(isOnBefore).toBe(true);
+  const {value: valueBefore, toggle} = result.current;
+  expect(valueBefore).toBe(true);
 
   act(() => toggle());
 
-  const {isOn: isOnAfter} = result.current;
-  expect(isOnAfter).toBe(false);
+  const {value: valueAfter} = result.current;
+  expect(valueAfter).toBe(false);
 });
