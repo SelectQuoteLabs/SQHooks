@@ -168,6 +168,33 @@ return (
 );
 ```
 
+---
+
+### useLocalStorage
+
+**Description** Sync state to local storage (similar to `useState`) so that it persists through a page refresh. Tests utilize the [`jest-localstorage-mock`](https://www.npmjs.com/package/jest-localstorage-mock).
+
+**Example**
+
+```javascript
+const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
+```
+
+**Parameters**
+
+`key: string` The localStorage key you want to read/create/update.
+
+`initialValue` (optional) The initial value to set if the value of the key in localStorage is empty.
+
+**Returns**
+
+```typescript
+{
+  storedValue: Type | undefined;
+  setValue: React.Dispatch<React.SetStateAction<Type | undefined>>;
+}
+```
+
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
