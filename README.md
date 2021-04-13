@@ -130,6 +130,73 @@ const prevCount = usePrevious(count);
 
 ---
 
+### useDebounce / useDebouncedCallback
+
+**Description** `useDebounce` for simple values, `useDebouncedCallback` for callbacks
+
+**[`use-debounce` docs](https://github.com/xnimorz/use-debounce#readme)**
+
+**Example**
+
+```javascript
+// useDebounce
+const [text, setText] = useState('Hello');
+const [value] = useDebounce(text, 1000);
+return (
+  <div>
+    <input
+      defaultValue={text}
+      onChange={(event) => setText(event.target.value)}
+    />
+    <p>Actual value: {text}</p>
+    <p>Debounced value: {value}</p>
+  </div>
+);
+// useDebouncedCallback
+const [value, setValue] = useState('');
+const debounced = useDebouncedCallback((value) => {
+  setValue(value);
+}, 1000);
+return (
+  <div>
+    <input
+      defaultValue={value}
+      onChange={(event) => debounced(event.target.value)}
+    />
+    <p>Debounced value: {value}</p>
+  </div>
+);
+```
+
+---
+
+### useLocalStorage
+
+**Description** Sync state to local storage (similar to `useState`) so that it persists through a page refresh. Tests utilize the [`jest-localstorage-mock`](https://www.npmjs.com/package/jest-localstorage-mock).
+
+**Example**
+
+```javascript
+const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
+```
+
+**Parameters**
+
+`key: string` The localStorage key you want to read/create/update.
+
+`initialValue` (optional) The initial value to set if the value of the key in localStorage is empty.
+
+**Returns**
+
+```typescript
+{
+  storedValue: Type | undefined;
+  setValue: React.Dispatch<React.SetStateAction<Type | undefined>>;
+}
+```
+
+---
+
 ### useToggle
 
 **Description** Simple hook that returns a boolean value and a function that toggles that value to the inverse of its previous state.
