@@ -170,6 +170,33 @@ return (
 
 ---
 
+### useLocalStorage
+
+**Description** Sync state to local storage (similar to `useState`) so that it persists through a page refresh. Tests utilize the [`jest-localstorage-mock`](https://www.npmjs.com/package/jest-localstorage-mock).
+
+**Example**
+
+```javascript
+const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
+```
+
+**Parameters**
+
+`key: string` The localStorage key you want to read/create/update.
+
+`initialValue` (optional) The initial value to set if the value of the key in localStorage is empty.
+
+**Returns**
+
+```typescript
+{
+  storedValue: Type | undefined;
+  setValue: React.Dispatch<React.SetStateAction<Type | undefined>>;
+}
+```
+
+---
+
 ### useDropdownOptions
 
 **Description** Transforms your array of objects into the shape our form system expects.
@@ -182,9 +209,7 @@ const users = [
   {firstName: 'Count', lastName: 'Chocula', ID: 456},
   {firstName: 'Boo', lastName: 'Berry', ID: 789},
 ];
-
 const options = useDropdownOptions('firstName', 'ID', users);
-
 /*
 options:
 [
