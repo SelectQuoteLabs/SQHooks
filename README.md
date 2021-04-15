@@ -195,6 +195,38 @@ const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
 }
 ```
 
+---
+
+### useIsomorphicLocalStorage
+
+**Description** An isomorphic version of `useLocalStorage`. Sync state to local storage (similar to `useState`) so that it persists through a page refresh. Tests utilize the [`jest-localstorage-mock`](https://www.npmjs.com/package/jest-localstorage-mock).
+
+**Example**
+
+```javascript
+const {storedValue, storeValue, isFetching} = useIsomorphicLocalStorage(
+  'ID',
+  'abc123'
+);
+```
+
+**Parameters**
+
+`key: string` The localStorage key you want to read/create/update.
+
+`initialValue` (optional) The initial value to set if the value of the key in localStorage is empty.
+
+**Returns**
+the stored value from localStorage, a function to store a value in localStorage, and a boolean value to indicate fetching state.
+
+```typescript
+{
+  storedValue: string;
+  storeValue: React.Dispatch<React.SetStateAction<Type | undefined>>;
+  isFetching: boolean;
+}
+```
+
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
