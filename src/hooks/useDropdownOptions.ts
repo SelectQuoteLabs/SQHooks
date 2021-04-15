@@ -15,7 +15,7 @@ export function useDropdownOptions(
   label: string,
   value: string,
   items?: Item[]
-): {label: string | number; value: string | number | null}[] {
+) {
   return React.useMemo(() => {
     if (items && !isObjectArray(items)) {
       throw Error(
@@ -23,7 +23,7 @@ export function useDropdownOptions(
       );
     }
 
-    if (!items || !items.length) {
+    if (!items?.length) {
       return [{label: '- -', value: null}];
     }
 
