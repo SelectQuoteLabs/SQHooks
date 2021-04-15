@@ -195,6 +195,30 @@ const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
 }
 ```
 
+---
+
+### useToggle
+
+**Description** Simple hook that returns a boolean value and a function that toggles that value to the inverse of its current state.
+
+**Example**
+
+```javascript
+const {value, toggle} = useToggle();
+```
+
+**Parameters**
+`initialValue: boolean` (optional) The initial value of `value`. Defaults to `false` if not specified.
+
+**Returns**
+
+```ts
+{
+  value: boolean;
+  toggle: () => void
+}
+```
+
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
