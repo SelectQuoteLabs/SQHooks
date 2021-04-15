@@ -197,6 +197,30 @@ const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
 
 ---
 
+### useToggle
+
+**Description** Simple hook that returns a boolean value and a function that toggles that value to the inverse of its current state.
+
+**Example**
+
+```javascript
+const {value, toggle} = useToggle();
+```
+
+**Parameters**
+`initialValue: boolean` (optional) The initial value of `value`. Defaults to `false` if not specified.
+
+**Returns**
+
+```ts
+{
+  value: boolean;
+  toggle: () => void
+}
+```
+
+---
+
 ### useClipboard
 
 **Description** Returns a function to copy a given value to the clipboard, and a ref to pass to an element to enable copying its `innerText` using the function as the element's `onClick` handler.
@@ -211,7 +235,6 @@ return (
     hello
   </button>
 );
-
 // copies 'world'
 const {onClick, ref} = useClipboard('world');
 return (
