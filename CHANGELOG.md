@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.4.0...v1.5.0) (2021-04-15)
+
+
+### Features
+
+* 🎸 add useToggle hook with tests ([710fffa](https://github.com/SelectQuoteLabs/SQHooks/commit/710fffa4db8cc6b789b0026d5e6411a79b211238))
+
 ## [1.4.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.3.0...v1.4.0) (2021-04-13)
 
 
