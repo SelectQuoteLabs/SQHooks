@@ -2,8 +2,8 @@ import React from 'react';
 
 /**
  * This hook supports two types of use cases --
- * 1. const [storedValue, storeValue] = useIsomorphicLocalStorage(key, weKnowThisValueUpFrontAndWantToInitializeItInLocalStorage)
- * 2. const [storedValue, storeValue] = useIsomorphicLocalStorage(key) <-- no up front value known (need to create it on backend, etc)
+ * 1. const {storedValue, storeValue} = useIsomorphicLocalStorage(key, weKnowThisValueUpFrontAndWantToInitializeItInLocalStorage)
+ * 2. const {storedValue, storeValue} = useIsomorphicLocalStorage(key) <-- no up front value known (need to create it on backend, etc)
  * @param {string} key
  * @param {string | number | function | object | array | undefined} initialValue
  * @returns [any, function]
