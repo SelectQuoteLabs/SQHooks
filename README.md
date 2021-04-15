@@ -197,6 +197,30 @@ const {storedValue, setValue} = useLocalStorage('ID', 'abc123');
 
 ---
 
+### useToggle
+
+**Description** Simple hook that returns a boolean value and a function that toggles that value to the inverse of its current state.
+
+**Example**
+
+```javascript
+const {value, toggle} = useToggle();
+```
+
+**Parameters**
+`initialValue: boolean` (optional) The initial value of `value`. Defaults to `false` if not specified.
+
+**Returns**
+
+```ts
+{
+  value: boolean;
+  toggle: () => void
+}
+```
+
+---
+
 ### useDropdownOptions
 
 **Description** Transforms your array of objects into the shape our form system expects.
