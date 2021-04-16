@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.7.0...v1.8.0) (2021-04-16)
+
+
+### Features
+
+* 🎸 add useIsomorphicLocalStorage hook with tests ([c751460](https://github.com/SelectQuoteLabs/SQHooks/commit/c7514603a91b895594c0fb7c0856d24fae7676f0))
+
 ## [1.7.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.6.0...v1.7.0) (2021-04-16)
 
 
