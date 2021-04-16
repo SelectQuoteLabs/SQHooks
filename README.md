@@ -221,6 +221,49 @@ const {value, toggle} = useToggle();
 
 ---
 
+### useDropdownOptions
+
+**Description** Transforms your array of objects into the shape our form system expects.
+
+**Example**
+
+```javascript
+const users = [
+  {firstName: 'Franken', lastName: 'Berry', ID: 123},
+  {firstName: 'Count', lastName: 'Chocula', ID: 456},
+  {firstName: 'Boo', lastName: 'Berry', ID: 789},
+];
+const options = useDropdownOptions('firstName', 'ID', users);
+/*
+options:
+[
+  { label: 'Franken', value: 123 },
+  { label: 'Count', value: 456 },
+  { label: 'Boo', value: 789 },
+]
+*/
+```
+
+**Parameters**
+
+`label`: the key in the provided items object array to use as the value of the `label` property in the returned options object array
+
+`value`: the key in the provided items object array to use as the value of the `value` property in the returned options object array
+
+`items`: array of objects from which to draw the values of `label` and `value` to build the options object array
+
+**Returns** Array of objects to be used as dropdown options
+
+```ts
+{
+  label: string | number;
+  value: string | number | null;
+}
+[];
+```
+
+---
+
 ### useClipboard
 
 **Description** Returns a function to copy a given value to the clipboard, and a ref to pass to an element to enable copying its `innerText` using the function as the element's `onClick` handler.
