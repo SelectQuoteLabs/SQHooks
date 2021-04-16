@@ -262,6 +262,44 @@ options:
 [];
 ```
 
+---
+
+### useClipboard
+
+**Description** Returns a function to copy a given value to the clipboard, and a ref to pass to an element to enable copying its `innerText` using the function as the element's `onClick` handler.
+
+**Example**
+
+```javascript
+// copies 'hello'
+const {onClick, ref} = useClipboard();
+return (
+  <button onClick={onClick} ref={ref}>
+    hello
+  </button>
+);
+// copies 'world'
+const {onClick, ref} = useClipboard('world');
+return (
+  <button onClick={onClick} ref={ref}>
+    hello
+  </button>
+);
+```
+
+**Parameters**
+
+`contentToCopy: string` (optional) Content to copy to the clipboard when `onClick` is called. If a value is not specified, the `innerText` of the clicked element will be copied.
+
+**Returns**
+
+```typescript
+{
+  onClick: () => Promise<void>;
+  ref: React.RefObject<HTMLElement>;
+}
+```
+
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
