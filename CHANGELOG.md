@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.6.0...v1.7.0) (2021-04-16)
+
+
+### Features
+
+* 🎸 add useClipboard hook with tests ([d6929ae](https://github.com/SelectQuoteLabs/SQHooks/commit/d6929aec6cc0c9d5f10b3ace9496998e2993daac))
+
 ## [1.6.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.5.0...v1.6.0) (2021-04-16)
 
 
