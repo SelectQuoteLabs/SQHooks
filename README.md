@@ -43,7 +43,7 @@ npm install ~/path/to/selectquotelabs-sqhooks-x.x.x.tgz
 Example
 
 ```javscript
-import {useDialog} from '@selectquotelabs/sqhooks'
+import {useDialog} from '@selectquotelabs/sqhooks';
 
 Hopefully you know how to consume a hook within a component
 ```
