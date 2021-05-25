@@ -3,7 +3,7 @@
 ## Getting Started
 
 ```bash
-> npm install @selectquotelabs/SQHooks
+> npm install @selectquotelabs/sqhooks
 ```
 
 ## Local Development
