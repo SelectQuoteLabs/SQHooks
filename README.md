@@ -8,6 +8,8 @@
 
 ## Local Development
 
+NPM Version: [lts/fermium](https://nodejs.org/en/about/releases/)
+
 ```bash
 > npm install
 ```
@@ -335,3 +337,11 @@ return (
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
+
+## Upgrading
+
+### v1 to v2
+
+Affected hooks: `useDropdownOptions`
+
+v2 of SQHooks includes a change to `useDropdownOptions` that allows it to return an empty array. Previously if an empty array was passed for `items` then the hook would return an array with the "empty" option, `{label: '- -', value: null}`. v2 will now return an empty array. If you still want that "empty" on your dropdown or autocomplete then you should use the `displayEmpty` prop on your component.

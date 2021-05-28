@@ -32,16 +32,11 @@ it('should return an array of objects with the correct values', () => {
   expect(value).toEqual(mockData[0].ID);
 });
 
-it('should return an array of one object with default values if no items provided', () => {
+it('should return an empty array if no items provided', () => {
   const {result} = setupRenderHook('hello', 'test');
 
   expect(result.current).toBeInstanceOf(Array);
-  expect(result.current).toHaveLength(1);
-  expect(result.current[0]).toBeInstanceOf(Object);
-
-  const {label, value} = result.current[0];
-  expect(label).toEqual('- -');
-  expect(value).toBeNull();
+  expect(result.current).toHaveLength(0);
 });
 
 it('should return object array based on provided items', () => {

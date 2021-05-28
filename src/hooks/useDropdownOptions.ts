@@ -23,11 +23,7 @@ export function useDropdownOptions(
       );
     }
 
-    if (!items?.length) {
-      return [{label: '- -', value: null}];
-    }
-
-    return items.map((item) => ({label: item[label], value: item[value]}));
+    return items?.map((item) => ({label: item[label], value: item[value]})) || [];
   }, [items, label, value]);
 }
 
