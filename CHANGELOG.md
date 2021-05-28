@@ -1,3 +1,15 @@
+## [2.0.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.8.0...v2.0.0) (2021-05-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 useDropdownOptions can now return an empty array with the items param is
+an empty array
+
+### Features
+
+* 🎸 useDropdownOption returns empty array with empty data ([79aa34e](https://github.com/SelectQuoteLabs/SQHooks/commit/79aa34ec95700aa8292264ff618edb6fd2d03b32)), closes [#27](https://github.com/SelectQuoteLabs/SQHooks/issues/27)
+
 ## [1.8.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.7.0...v1.8.0) (2021-04-16)
 
 
