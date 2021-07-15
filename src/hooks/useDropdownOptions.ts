@@ -1,9 +1,5 @@
 import React from 'react';
 
-export interface Item {
-  [key: string]: string | number;
-}
-
 /**
  * Transforms your array of objects into the shape our form system expects.
  * Our form system expects an Array of Objects with a shape of [{label: String, value: String}]
@@ -11,10 +7,10 @@ export interface Item {
  * @param {string} value
  * @param {array} items [{item}]
  */
-export function useDropdownOptions(
-  label: string,
-  value: string,
-  items?: Item[]
+export function useDropdownOptions<TItem = {[key: string]: unknown}>(
+  label: keyof TItem,
+  value: keyof TItem,
+  items?: TItem[]
 ) {
   return React.useMemo(() => {
     if (items && !isObjectArray(items)) {

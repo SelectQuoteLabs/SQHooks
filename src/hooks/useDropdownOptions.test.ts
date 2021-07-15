@@ -1,6 +1,11 @@
 import {renderHook} from '@testing-library/react-hooks';
 import {useDropdownOptions} from '.';
-import {Item} from './useDropdownOptions';
+
+type MockItem = {
+  firstName: string;
+  lastName: string;
+  ID: number;
+};
 
 const mockData = [
   {firstName: 'Franken', lastName: 'Berry', ID: 123},
@@ -10,14 +15,18 @@ const mockData = [
   {firstName: 'Yummy', lastName: 'Mummy', ID: 246},
 ];
 
-const setupRenderHook = (label: string, value: string, items?: Item[]) => {
-  return renderHook(() => useDropdownOptions(label, value, items), {
+const setupRenderHook = <TMockItem>(
+  label: keyof TMockItem,
+  value: keyof TMockItem,
+  items?: TMockItem[]
+) => {
+  return renderHook(() => useDropdownOptions<TMockItem>(label, value, items), {
     initialProps: {items: null},
   });
 };
 
 it('should return an array of objects with the correct properties', () => {
-  const {result} = setupRenderHook('firstName', 'ID', [mockData[0]]);
+  const {result} = setupRenderHook<MockItem>('firstName', 'ID', [mockData[0]]);
 
   expect(Object.keys(result.current[0])).toHaveLength(2);
   expect(result.current[0]).toHaveProperty('label');
@@ -25,7 +34,7 @@ it('should return an array of objects with the correct properties', () => {
 });
 
 it('should return an array of objects with the correct values', () => {
-  const {result} = setupRenderHook('firstName', 'ID', [mockData[0]]);
+  const {result} = setupRenderHook<MockItem>('firstName', 'ID', [mockData[0]]);
   const {label, value} = result.current[0];
 
   expect(label).toEqual(mockData[0].firstName);
@@ -40,7 +49,7 @@ it('should return an empty array if no items provided', () => {
 });
 
 it('should return object array based on provided items', () => {
-  const {result} = setupRenderHook('firstName', 'ID', mockData);
+  const {result} = setupRenderHook<MockItem>('firstName', 'ID', mockData);
 
   expect(result.current).toMatchInlineSnapshot(`
     Array [
