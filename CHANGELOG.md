@@ -1,3 +1,10 @@
+### [2.0.1](https://github.com/SelectQuoteLabs/SQHooks/compare/v2.0.0...v2.0.1) (2021-07-15)
+
+
+### Bug Fixes
+
+* 🐛 fix narrow typing of items param in useDropdownOptions ([9ddca08](https://github.com/SelectQuoteLabs/SQHooks/commit/9ddca08aaa6bab4acb253b487602b4dea0f20cd6))
+
 ## [2.0.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v1.8.0...v2.0.0) (2021-05-28)
 
 
