@@ -6,6 +6,7 @@ import {useLocalStorage} from './useLocalStorage';
 import {useIsomorphicLocalStorage} from './useIsomorphicLocalStorage';
 import {useClipboard} from './useClipboard';
 import {useToggle} from './useToggle';
+import {useAutoHeight} from './useAutoHeight';
 
 export {
   useDialog,
@@ -17,4 +18,5 @@ export {
   useIsomorphicLocalStorage,
   useClipboard,
   useToggle,
+  useAutoHeight,
 };
