@@ -2,8 +2,15 @@
   "compilerOptions": {
     "baseUrl": "src",
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client", "jest"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "types": [
+      "vite/client",
+      "jest"
+    ],
     "allowJs": false,
     "skipLibCheck": false,
     "esModuleInterop": false,
@@ -19,6 +26,10 @@
     "emitDeclarationOnly": true,
     "outDir": "dist"
   },
-  "include": ["./src"],
-  "exclude": ["**/*.test.ts"]
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "**/*.test.ts"
+  ]
 }

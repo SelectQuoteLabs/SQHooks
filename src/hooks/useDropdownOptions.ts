@@ -19,7 +19,9 @@ export function useDropdownOptions<TItem = {[key: string]: unknown}>(
       );
     }
 
-    return items?.map((item) => ({label: item[label], value: item[value]})) || [];
+    return (
+      items?.map((item) => ({label: item[label], value: item[value]})) || []
+    );
   }, [items, label, value]);
 }
 
