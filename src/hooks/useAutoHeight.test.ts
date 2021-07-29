@@ -1,5 +1,4 @@
 import React from 'react';
-import {render} from '@testing-library/react';
 import {renderHook, act} from '@testing-library/react-hooks';
 import {useAutoHeight} from '.';
 
@@ -16,14 +15,7 @@ describe('useAutoHeight', () => {
 
     const {result} = renderHook(useAutoHeight);
 
-    const {container} = render(
-      <div id="container">
-        <div id="sibling" />
-        <div id="autoHeightDiv" />
-      </div>
-    );
-
-    const autoHeightDiv = container.querySelector('[id="autoHeightDiv"]');
+    const autoHeightDiv = document.createElement('div');
 
     act(() => {
       result.current.containerRef(autoHeightDiv as HTMLElement);
@@ -41,36 +33,31 @@ describe('useAutoHeight', () => {
 
     const {result} = renderHook(useAutoHeight);
 
-    const {container} = render(
-      <div id="container">
-        <div id="sibling" />
-        <div id="autoHeightDiv" />
-      </div>
-    );
+    const container = document.createElement('div');
+    const sibling = document.createElement('div');
+    const autoHeightDiv = document.createElement('div');
+    container.appendChild(sibling);
+    container.appendChild(autoHeightDiv);
 
-    const divContainer = container.querySelector('[id="container"]');
     jest
-      .spyOn(divContainer, 'clientHeight', 'get')
+      .spyOn(container, 'clientHeight', 'get')
       .mockImplementation(() => styles.parentHeight);
-
     jest
-      .spyOn(divContainer as HTMLElement, 'style', 'get')
+      .spyOn(container as HTMLElement, 'style', 'get')
       .mockImplementation(
         () => ({paddingBottom: styles.parentPaddingBottom} as any)
       );
 
-    const sibling = container.querySelector('[id="sibling"]');
     jest
       .spyOn(sibling, 'clientHeight', 'get')
       .mockImplementation(() => styles.siblingHeight);
 
-    const autoHeightDiv = container.querySelector('[id="autoHeightDiv"]');
-    jest
-      .spyOn(autoHeightDiv, 'getBoundingClientRect')
-      .mockImplementation(() => ({
-        ...defaultBoundingClientRect,
-        top: styles.siblingHeight,
-      }));
+    jest.spyOn(autoHeightDiv, 'getBoundingClientRect').mockImplementation(
+      () =>
+        ({
+          top: styles.siblingHeight,
+        } as any)
+    );
 
     act(() => {
       result.current.containerRef(autoHeightDiv as HTMLElement);
@@ -81,15 +68,3 @@ describe('useAutoHeight', () => {
     );
   });
 });
-
-const defaultBoundingClientRect = {
-  top: 0,
-  height: 0,
-  width: 0,
-  x: 0,
-  y: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  toJSON: jest.fn(),
-};
