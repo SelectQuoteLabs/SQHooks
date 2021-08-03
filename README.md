@@ -334,6 +334,26 @@ return (
 }
 ```
 
+### useAutoHeight
+
+**Description** Returns a callback function which works the same as a ref that should be attached to the component that is to be auto-size. Also returns a height string which should be added to that component's styles as well. `Note`: This only works for components that are the last child of their parent.
+
+**Example**
+
+```javascript
+const {containerRef, autoHeight} = useAutoHeight();
+return <div ref={containerRef} style={{height: autoHeight}} />;
+```
+
+**Returns**
+
+```typescript
+{
+  containerRef: (node: HTMLElement) => void;
+  autoHeight: String | undefined;
+}
+```
+
 ## Migrate to SQHooks
 
 Use the library for net-new code. As a PR reviewer, encourage the use of Hooks from this library. Squads should create backlog tickets to replace a hook, with it's SQHooks equivalent.
