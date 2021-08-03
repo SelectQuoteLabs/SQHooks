@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v2.0.1...v2.1.0) (2021-08-03)
+
+
+### Features
+
+* 🎸 added useAutoHeight hook ([860e0d0](https://github.com/SelectQuoteLabs/SQHooks/commit/860e0d078a8b0f30b465a290d2cd865b6cf44a38)), closes [#30](https://github.com/SelectQuoteLabs/SQHooks/issues/30)
+
 ### [2.0.1](https://github.com/SelectQuoteLabs/SQHooks/compare/v2.0.0...v2.0.1) (2021-07-15)
 
 
