@@ -1,10 +1,14 @@
 import React from 'react';
 
-export function useAutoHeight() {
+interface useAutoHeightReturn {
+  autoHeight: string | undefined;
+  containerRef: (node: HTMLDivElement) => void;
+}
+export function useAutoHeight(): useAutoHeightReturn {
   const [containerRef, setContainerRef] = React.useState<
-    HTMLElement | undefined
+    HTMLDivElement | undefined
   >();
-  const refCallback = (node: HTMLElement) => {
+  const refCallback = (node: HTMLDivElement) => {
     setContainerRef(node);
   };
 
@@ -17,7 +21,8 @@ export function useAutoHeight() {
     const offsetBasedHeight = `calc(100vh - ${topOffset}px - 24px)`;
 
     const parentHeight = containerRef.parentElement?.clientHeight;
-    const parentPadding = containerRef.parentElement?.style.paddingBottom;
+    const parentPadding =
+      containerRef?.parentElement?.style.paddingBottom || '0px';
     const parentTopOffset =
       containerRef.parentElement?.getBoundingClientRect().top ?? 0;
     const topDifferential = topOffset - parentTopOffset;
