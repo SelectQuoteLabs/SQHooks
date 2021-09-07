@@ -18,7 +18,7 @@ describe('useAutoHeight', () => {
     const autoHeightDiv = document.createElement('div');
 
     act(() => {
-      result.current.containerRef(autoHeightDiv as HTMLElement);
+      result.current.containerRef(autoHeightDiv as HTMLDivElement);
     });
 
     expect(mockSetState).toHaveBeenCalledWith(autoHeightDiv);
@@ -60,7 +60,7 @@ describe('useAutoHeight', () => {
     );
 
     act(() => {
-      result.current.containerRef(autoHeightDiv as HTMLElement);
+      result.current.containerRef(autoHeightDiv as HTMLDivElement);
     });
 
     expect(result.current.autoHeight).toEqual(

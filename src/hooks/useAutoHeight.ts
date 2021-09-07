@@ -21,9 +21,8 @@ export function useAutoHeight(): useAutoHeightReturn {
     const offsetBasedHeight = `calc(100vh - ${topOffset}px - 24px)`;
 
     const parentHeight = containerRef.parentElement?.clientHeight;
-    const parentPadding = containerRef?.parentElement?.style.paddingBottom
-      ? containerRef?.parentElement?.style.paddingBottom
-      : '0px';
+    const parentPadding =
+      containerRef?.parentElement?.style.paddingBottom || '0px';
     const parentTopOffset =
       containerRef.parentElement?.getBoundingClientRect().top ?? 0;
     const topDifferential = topOffset - parentTopOffset;
