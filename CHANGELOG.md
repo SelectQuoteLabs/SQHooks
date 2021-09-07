@@ -1,3 +1,11 @@
+### [2.1.1](https://github.com/SelectQuoteLabs/SQHooks/compare/v2.1.0...v2.1.1) (2021-09-07)
+
+
+### Bug Fixes
+
+* 🐛 correct useAutoHeight logic and return type ([7b61386](https://github.com/SelectQuoteLabs/SQHooks/commit/7b613865302c8bd10e3c1da3b0ed981cdc3081ee)), closes [#37](https://github.com/SelectQuoteLabs/SQHooks/issues/37)
+* 🐛 update tests file and small change to remove ternery ([6f630d7](https://github.com/SelectQuoteLabs/SQHooks/commit/6f630d75aac392974399dc47f698a5e16dc7e716)), closes [#37](https://github.com/SelectQuoteLabs/SQHooks/issues/37)
+
 ## [2.1.0](https://github.com/SelectQuoteLabs/SQHooks/compare/v2.0.1...v2.1.0) (2021-08-03)
 
 
