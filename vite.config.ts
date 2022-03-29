@@ -1,22 +1,24 @@
 import {defineConfig} from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react';
 import path from 'path';
+import {peerDependencies} from './package.json'; // Also include dependencies if any become present
 
 export default defineConfig({
-  plugins: [reactRefresh()],
+  plugins: [
+    react({
+      jsxRuntime: 'classic',
+    }),
+  ],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/hooks/index.ts'),
       name: 'SQHooks',
       formats: ['es', 'cjs'],
+      fileName: (format) => `sqhooks.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
-      output: {
-        globals: {
-          react: 'React',
-        },
-      },
+      external: [...Object.keys(peerDependencies)],
     },
+    sourcemap: true,
   },
 });
