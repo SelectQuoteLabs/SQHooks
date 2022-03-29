@@ -1,3 +1,10 @@
+### [2.1.2](https://github.com/SelectQuoteLabs/SQHooks/compare/v2.1.1...v2.1.2) (2022-03-29)
+
+
+### Bug Fixes
+
+* 🐛 No longer ships React as a dependency ([0160628](https://github.com/SelectQuoteLabs/SQHooks/commit/0160628bbc7204301912c312f94679087ff72639)), closes [#45](https://github.com/SelectQuoteLabs/SQHooks/issues/45)
+
 ### [2.1.1](https://github.com/SelectQuoteLabs/SQHooks/compare/v2.1.0...v2.1.1) (2021-09-07)
 
 
